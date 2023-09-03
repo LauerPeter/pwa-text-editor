@@ -1,10 +1,8 @@
-/*
-  The idb package being required below provides some syntactic sugar around the methods needed to work with IndexedDB. Yes, the code you see below is actually a "prettier" version of what you would normally have to write. Be thankful. We've only been using the idb package since mid 2022. Before that students had to write this code with no helper methods. These students deserve a medal.
-*/
+
+
 import { openDB } from 'idb';
 
-// We will define a global constant for our database name so we don't mess it up anywhere
-const DB_NAME = "jate"
+const DB_NAME = "jate";
 
 const initdb = async () =>
   openDB(DB_NAME, 1, {
@@ -18,42 +16,43 @@ const initdb = async () =>
     },
   });
 
-/*
-  We need to add some code below which will take updated content and save it to IndexedDB.
-*/
+
 export const putDb = async (content) => {
-  // First, create a variable, and set it to asyncronously await the opening of the database. Replace the items in all caps
-  
-  // TODO: Change YOUR_OPEN_DB_VAR to whatever variable name you wanT. Note that you'll then need to change any other occcurences of YOUR_OPEN_DB_VAR to the same variable name.
-  const YOUR_OPEN_DB_VAR = await openDB(DB_NAME, 1);
+  // First, create a variable, and set it to asynchronously await the opening of the database.
+  const db = await openDB(DB_NAME, 1);
+  // Now create a transaction for read-write access.
+  const tx = db.transaction(DB_NAME, 'readwrite');
+  // Create a variable for the object store.
+  const store = tx.objectStore(DB_NAME);
+  await store.put({ id: 1, value: content });
+  // wait for transaction to complete
+  await new Promise((resolve) => tx.addEventListener('complete', resolve));
 
-  // TODO: Now create a variable for the transaction; again, this will be referenced below.
-  const YOUR_TX_VAR = YOUR_OPEN_DB_VAR.transaction(DB_NAME, 'readwrite');
-
-  // TODO: Now create a variable for the store
-  const YOUR_STORE_VAR = YOUR_TX_VAR.objectStore(DB_NAME);
-
-  const request = YOUR_STORE_VAR.put({ id: 1, value: content });
-  const result = await request;
-  console.log('🚀 - data saved to the database', result.value);
+  console.log('🚀 - data saved to the database:', content);
 };
 
-/*
-  We need to add some code below which will get all content from IndexedDB.
-*/
 export const getDb = async () => {
-  // You can duplicate the same lines of code from above, except that the transaction will be 'readonly'
-  
-  // TODO: Copy LINES 28, 31 and 34 above; the new line 31 code should be "readonly"
 
-  // Leave the rest as-is
-  const request = store.get(1);
-  const result = await request;
-  result
-    ? console.log('🚀 - data retrieved from the database', result.value)
-    : console.log('🚀 - data not found in the database');
+  const db = await openDB(DB_NAME, 1);
+  const tx = db.transaction(DB_NAME, 'readonly');
+  const store = tx.objectStore(DB_NAME);
 
-  return result?.value;
+  // retrieve content from the object store 
+  const request = store.get(1); 
+
+  // await transaction to complete
+  const result = await new Promise((resolve) => {
+    request.addEventListener('success', () => resolve(request.result));
+    request.addEventListener('error', () => resolve(null));
+  });
+
+  if (result) {
+    console.log('🚀 - data retrieved from the database:', result.value);
+    return result.value;
+  } else {
+    console.log('🚀 - data not found in the database.');
+    return null;
+  }
 };
 
-initdb();
+initdb()

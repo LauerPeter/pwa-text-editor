@@ -22,8 +22,25 @@ butInstall.addEventListener('click', async () => {
 
   // TODO: Notice line 8 above. We want the same line here, but the hidden value should be set to true.
   // Insert line here
-});
+
+    // Set window.deferredPrompt to null after prompting.
+    window.deferredPrompt = null;
+
+  
+    butInstall.classList.toggle('hidden', true);
+  
+    // waits for user to respond to the prompt
+    const choiceResult = await promptEvent.userChoice;
+  
+    if (choiceResult.outcome === 'accepted') {
+      console.log('User accepted the PWA installation');
+    } else {
+      console.log('User declined the PWA installation');
+    }
+  });
 
 window.addEventListener('appinstalled', (event) => {
   window.deferredPrompt = null;
 });
+
+
