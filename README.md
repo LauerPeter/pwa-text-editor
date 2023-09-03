@@ -8,11 +8,12 @@ This application allows you to write offline without an internet connection. Not
 
 ### Screenshots
 
-![J A T E - Google Chrome 9_3_2023 2_19_56 PM](https://github.com/LauerPeter/pwa-text-editor/assets/135652706/3f72aa3b-3881-45d6-a6ce-91429a2b8aab)
+![jate-pic1](https://github.com/LauerPeter/pwa-text-editor/assets/135652706/ca5fa7e9-95d1-4e90-935a-800819394e41)
 
-![J A T E - Google Chrome 9_3_2023 2_22_19 PM](https://github.com/LauerPeter/pwa-text-editor/assets/135652706/d6761eff-0320-43ea-bcc7-90e175be1df3)
+![jate-pic2](https://github.com/LauerPeter/pwa-text-editor/assets/135652706/ee42c2a6-cff5-4ff1-8b86-e0fd062a469e)
 
-![J A T E - Google Chrome 9_3_2023 2_22_46 PM](https://github.com/LauerPeter/pwa-text-editor/assets/135652706/84a19b95-6316-4923-a9e8-bf2de74499aa)
+![jate-pic3](https://github.com/LauerPeter/pwa-text-editor/assets/135652706/eaac0a77-10ce-41bb-8a4e-54fe1778c608)
+
 
 ### Installing
 
