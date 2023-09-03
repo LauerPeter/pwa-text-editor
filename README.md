@@ -4,7 +4,11 @@ A simple text editor to save notes in offline.
 
 ## Description
 
-This application allows you to write offline without an internet connection. Notes are saved and you can see them after exiting the app and coming back. This application is currently not deployed.
+This application allows you to write offline without an internet connection. Notes are saved and you can see them after exiting the app and coming back. This application is currently not deployed to heroku ---need to solve error 
+
+-Installing dependencies
+Installing node modules
+npm ERR! Cannot read property 'express' of undefined
 
 ### Screenshots
 
