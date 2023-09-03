@@ -70,9 +70,10 @@ registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
   If you supply the correct values below, this file is complete.
 */
+const paths = ["style", "script", "worker"];
 
-registerRoute( ({ request }) => variableForArrayHere.ARRAY_METHOD_HERE(variableForDestinationHere),
-  new CLASSNAME_TO_INSTANTIATE_HERE({
+registerRoute(({ request }) => paths.includes(request.destination),
+  new StaleWhileRevalidate({
     cacheName: 'asset-cache',
     plugins: [
       new CacheableResponsePlugin({
