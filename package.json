@@ -1,24 +1,27 @@
 
 
 {
-  "name": "JATE",
+  "name": "texteditor",
   "version": "1.0.0",
   "description": "",
-  "engines": {
-    "node": "14.x",
-    "npm": "6.x"
-  },
+  "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install --only=prod && npm run build",
+    "start:dev": "concurrently \"cd client && npm run build\" \"cd server && npm run server\" ",
+    "start": "npm run build && cd server && node server.js",
+    "server": "cd server node server.js --ignore client",
+    "build": "cd client && npm run build",
+    "install": "cd client && npm install",
     "client": "cd client && npm start",
-    "server": "cd server && nodemon server.js"
+    "heroku-prebuild": "npm install --dev"
   },
+  "author": "",
+  "license": "",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",
-    "nodemon": "^2.0.4"
+    "nodemon": "^2.0.4",
+    "webpack": "^5.69.1"
   }
 }
