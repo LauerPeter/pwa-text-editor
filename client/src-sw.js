@@ -27,15 +27,18 @@ warmStrategyCache({
 
 registerRoute(({ request }) => request.mode === 'navigate', pageCache);
 
-const paths = ["style", "script", "worker"];
-
-registerRoute(({ request }) => paths.includes(request.destination),
-  new StaleWhileRevalidate({
-    cacheName: 'asset-cache',
+registerRoute(
+  ({ request }) => request.destination === 'image',
+    new CacheFirst({
+    cacheName: 'my-asset-cache',
     plugins: [
       new CacheableResponsePlugin({
         statuses: [0, 200],
       }),
+      new ExpirationPlugin({
+        maxEntries: 60,
+        maxAgeSeconds: 30 * 24 * 60 * 60,
+      }),
     ],
-  })
+  }),
 );
