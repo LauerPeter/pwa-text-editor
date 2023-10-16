@@ -1,41 +1,51 @@
-# PWA Text Editor
-
-A simple text editor to save notes in offline.
+# JATE - Just Another Text Editor
 
 ## Description
 
-This application allows you to write offline without an internet connection. Notes are saved and you can see them after exiting the app and coming back. This application is currently not deployed to heroku ---need to solve error 
+JATE (Just Another Text Editor) is a web-based text editor that allows you to write and edit code and text easily. It's designed to be a simple and lightweight tool for your text editing needs.
 
--Installing dependencies
-Installing node modules
-npm ERR! Cannot read property 'express' of undefined
+## Features
 
-### Screenshots
+- Syntax highlighting for various programming languages.
+- A clean and user-friendly interface.
+- Local storage support to save your work.
+- Easy installation as a Progressive Web App (PWA).
 
-![jate-pic1](https://github.com/LauerPeter/pwa-text-editor/assets/135652706/ca5fa7e9-95d1-4e90-935a-800819394e41)
+## Usage
 
-![jate-pic2](https://github.com/LauerPeter/pwa-text-editor/assets/135652706/ee42c2a6-cff5-4ff1-8b86-e0fd062a469e)
+### Deployed App
 
-![jate-pic3](https://github.com/LauerPeter/pwa-text-editor/assets/135652706/eaac0a77-10ce-41bb-8a4e-54fe1778c608)
+To use the deployed app, simply click the "Install" button in the top left corner of the [JATE App](https://pwa-teditor-b5d50a805afd.herokuapp.com/).
 
+### Local Host
 
-### Installing
+To run the app on your local machine:
 
-npm i 
+1. Clone the repository: `git clone <repository_url>`
+2. Navigate to the project's root directory.
+3. Install dependencies: `npm install`
+4. Start the application: `npm start`
 
-- make sure you run this command in the root, server, and client directory.
+## Technologies
 
-### Executing program
+JATE is built using the following technologies:
 
-npm run build --/client
-
-npm run start --/client 
-
-## Authors
-
-Peter Lauer
-
+- JavaScript
+- Node.js
+- Express.js
+- CodeMirror
+- IndexedDB
 
 ## License
 
-This project is licensed under the [MIT] License - see the LICENSE.md file for details
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## Links
+
+- Deployed App: [JATE App](https://pwa-teditor-b5d50a805afd.herokuapp.com/)
+
+## Screenshots
+
+![Screenshot 1](https://github.com/LauerPeter/pwa-text-editor/assets/135652706/89146dc7-b872-4d96-adaf-302ecce50367)
+![Screenshot 2](https://github.com/LauerPeter/pwa-text-editor/assets/135652706/f531ac46-9307-4889-aca6-bfde8daad205)
+![Screenshot 3](https://github.com/LauerPeter/pwa-text-editor/assets/135652706/e2adf826-a3c1-406d-b457-0e9c6f8368a6)
