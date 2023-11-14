@@ -34,9 +34,6 @@ JATE is built using the following technologies:
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-## Links
-
-- Deployed App: [JATE App](https://pwa-teditor-b5d50a805afd.herokuapp.com/)
 
 ## Screenshots
 
