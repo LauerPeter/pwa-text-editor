@@ -11,12 +11,6 @@ JATE (Just Another Text Editor) is a web-based text editor that allows you to wr
 - Local storage support to save your work.
 - Easy installation as a Progressive Web App (PWA).
 
-## Usage
-
-### Deployed App
-
-To use the deployed app, simply click the "Install" button in the top left corner of the [JATE App](https://pwa-teditor-b5d50a805afd.herokuapp.com/).
-
 ### Local Host
 
 To run the app on your local machine:
